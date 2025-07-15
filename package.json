@@ -5,7 +5,9 @@
   "scripts": {
     "start": "ts-node ./src/app.ts",
     "build": "tsc",
-    "dev": "nodemon --exec ts-node ./src/bin/www.ts"
+    "dev": "nodemon --exec ts-node ./src/bin/www.ts",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@types/cookie-parser": "^1.4.9",
@@ -18,5 +20,18 @@
     "morgan": "~1.9.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "@types/debug": "^4.1.12",
+    "@typescript-eslint/eslint-plugin": "^8.37.0",
+    "@typescript-eslint/parser": "^8.37.0",
+    "eslint": "^9.31.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.5.1",
+    "globals": "^16.3.0",
+    "jiti": "^2.4.2",
+    "prettier": "^3.6.2",
+    "typescript-eslint": "^8.37.0"
   }
 }
