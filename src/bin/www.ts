@@ -3,6 +3,9 @@ import app from '../app'
 import createDebug from 'debug'
 const debug = createDebug('quill-and-creations:server')
 import http from 'http'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const port = normalizePort(process.env.PORT || '3000')
 app.set('port', port)
@@ -10,7 +13,11 @@ app.set('port', port)
 const server = http.createServer(app)
 
 server.listen(port, () => {
-  console.log(`Server is running on port ${port}`)
+  console.log(`Server running at http://localhost:${port}`)
+  console.log(`Swagger docs available at http://localhost:${port}/api-docs`)
+  console.log('Basic Auth credentials:')
+  console.log('  Username: admin, Password: password123')
+  console.log('  Username: user, Password: mypassword')
 })
 server.on('error', onError)
 server.on('listening', onListening)
