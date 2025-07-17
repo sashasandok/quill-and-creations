@@ -3,11 +3,15 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "ts-node ./src/app.ts",
-    "build": "tsc",
-    "dev": "nodemon --exec ts-node ./src/bin/www.ts",
+    "start": "node ./dist/bin/www.js",
+    "api_build": "tsc",
+    "api_dev": "nodemon --exec ts-node ./src/bin/www.ts",
+    "client_dev": "vite",
+    "client_build": "tsc -b && vite build",
+    "client_preview": "vite preview",
     "lint": "eslint . --ext .ts",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "build": "rm -rf ./dist && yarn run api_build && yarn run client_build"
   },
   "dependencies": {
     "@types/cookie-parser": "^1.4.9",
@@ -16,6 +20,7 @@
     "@types/node": "^24.0.14",
     "@types/swagger-jsdoc": "^6.0.4",
     "@types/swagger-ui-express": "^4.1.8",
+    "@vitejs/plugin-react": "^4.6.0",
     "bcryptjs": "^3.0.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -25,15 +30,20 @@
     "mongodb": "^6.17.0",
     "mongoose": "^8.16.3",
     "morgan": "~1.9.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vite": "^7.0.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.31.0",
     "@types/debug": "^4.1.12",
     "@types/dotenv": "^8.2.3",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
     "@typescript-eslint/eslint-plugin": "^8.37.0",
     "@typescript-eslint/parser": "^8.37.0",
     "eslint": "^9.31.0",
