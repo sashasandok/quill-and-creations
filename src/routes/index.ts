@@ -1,8 +1,20 @@
-import express from 'express'
-const router = express.Router()
+import cors from 'cors'
+import { Application, IRouter /* NextFunction, Request, Response */ } from 'express'
+import { userRouter } from './user'
 
-router.get('/', function (req, res) {
-  res.json({ msg: 'Express' })
-})
+export const routes = (app: Application, router: IRouter) => {
+  userRouter(router)
 
-export default router
+  app.use(cors())
+  // app.use((req: Request, res: Response, next: NextFunction) => {
+  //   res.header('Access-Control-Allow-Origin', '*')
+  //   res.header('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT,DELETE')
+  //   res.header(
+  //     'Access-Control-Allow-Headers',
+  //     'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+  //   )
+  //   next()
+  // })
+
+  app.use('/api', router)
+}

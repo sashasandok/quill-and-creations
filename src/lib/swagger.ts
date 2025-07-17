@@ -9,6 +9,12 @@ export const swaggerSpec = swaggerJsDoc({
       version: '1.0.0',
       description: 'A CRUD Quill and Creations project',
     },
+    servers: [
+      {
+        url: 'http://localhost:3000/api',
+        description: 'Development server',
+      },
+    ],
   },
   apis: [path.join(__dirname, '..', '*/**.ts'), '../../swagger.ts'],
 })
