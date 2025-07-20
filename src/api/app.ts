@@ -4,7 +4,7 @@ import cookieParser from 'cookie-parser'
 import logger from 'morgan'
 import swaggerUi from 'swagger-ui-express'
 import { routes } from './routes'
-import { swaggerSpec } from './lib'
+import { swaggerSpec } from './swagger'
 
 const app = express()
 
@@ -19,11 +19,9 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 const router = express.Router()
 routes(app, router)
 
-if (process.env.NODE_ENV !== 'development') {
-  app.use('/', express.static(path.join(__dirname, './client')))
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client', 'index.html'))
-  })
-}
+app.use('/', express.static(path.join(__dirname, '..', './client')))
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'client', 'index.html'))
+})
 
 export default app

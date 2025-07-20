@@ -4,6 +4,7 @@ import createDebug from 'debug'
 const debug = createDebug('quill-and-creations:server')
 import http from 'http'
 import dotenv from 'dotenv'
+import { connectDb } from '../lib'
 
 dotenv.config()
 
@@ -12,7 +13,8 @@ app.set('port', port)
 
 const server = http.createServer(app)
 
-server.listen(port, () => {
+server.listen(port, async () => {
+  connectDb()
   console.log(`Server running at http://localhost:${port}`)
   console.log(`Swagger docs available at http://localhost:${port}/api-docs`)
 })

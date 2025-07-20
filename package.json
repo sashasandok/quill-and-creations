@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./dist/bin/www.js",
+    "start": "node ./dist/api/bin/www.js",
     "api_build": "tsc",
-    "api_dev": "nodemon --exec ts-node ./src/bin/www.ts",
+    "api_dev": "nodemon --exec ts-node ./src/api/bin/www.ts",
     "client_dev": "vite",
     "client_build": "tsc -b && vite build",
     "client_preview": "vite preview",

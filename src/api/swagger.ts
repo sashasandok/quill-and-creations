@@ -1,7 +1,6 @@
-import path from 'path'
-import swaggerJsDoc from 'swagger-jsdoc'
+import swaggerJSDoc from 'swagger-jsdoc'
 
-export const swaggerSpec = swaggerJsDoc({
+export const swaggerSpec = swaggerJSDoc({
   definition: {
     openapi: '3.0.0',
     info: {
@@ -16,5 +15,5 @@ export const swaggerSpec = swaggerJsDoc({
       },
     ],
   },
-  apis: [path.join(__dirname, '..', '*/**.ts'), '../../swagger.ts'],
+  apis: [`${__dirname}/controllers/**/*.ts`, `${__dirname}/controllers/**/*.js`],
 })

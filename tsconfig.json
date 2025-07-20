@@ -7,6 +7,9 @@
     "strict": true,
     "skipLibCheck": true,
     "jsx": "react-jsx",
-    "outDir": "./dist"
-  }
+    "baseUrl": "./src/api",
+    "outDir": "./dist/api"
+  },
+  "include": ["src/api/**/*", "src/api/swagger.ts"],
+  "exclude": ["dist/**/*"]
 }
