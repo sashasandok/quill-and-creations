@@ -1,5 +1,6 @@
 import express from 'express'
 import path from 'path'
+import helmet from 'helmet'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
 import swaggerUi from 'swagger-ui-express'
@@ -7,6 +8,8 @@ import { routes } from './routes'
 import { swaggerSpec } from './swagger'
 
 const app = express()
+
+app.use(helmet())
 
 app.use(logger(':method :url :status :res[content-length] - :response-time ms'))
 app.use(express.json())
@@ -26,9 +29,6 @@ app.use(express.static(clientPath))
 // Serve static admin
 const adminPath = path.join(__dirname, '..', 'admin')
 app.use('/admin', express.static(adminPath))
-
-console.log('Serving client from:', clientPath)
-console.log('Serving admin from:', adminPath)
 
 // Admin fallback (for React Router inside /admin)
 app.get('/admin/*', (req, res) => {
