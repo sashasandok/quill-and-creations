@@ -6,10 +6,10 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "jsx": "react-jsx",
-    "baseUrl": "./src/api",
+    // "jsx": "react-jsx",
+    "baseUrl": "api",
     "outDir": "./dist/api"
   },
-  "include": ["src/api/**/*", "src/api/swagger.ts"],
+  "include": ["api/**/*", "api/swagger.ts"],
   "exclude": ["dist/**/*"]
 }

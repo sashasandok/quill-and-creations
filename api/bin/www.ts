@@ -8,7 +8,7 @@ import { connectDb } from '../lib'
 
 dotenv.config()
 
-const port = normalizePort(process.env.PORT || '3000')
+const port = normalizePort(process.env.API_PORT || '4001')
 app.set('port', port)
 
 const server = http.createServer(app)

@@ -4,14 +4,17 @@
   "private": true,
   "scripts": {
     "start": "node ./dist/api/bin/www.js",
-    "api_build": "tsc",
-    "api_dev": "nodemon --exec ts-node ./src/api/bin/www.ts",
-    "client_dev": "vite",
-    "client_build": "tsc -b && vite build",
-    "client_preview": "vite preview",
+    "build:api": "tsc",
+    "dev:api": "nodemon --exec ts-node ./api/bin/www.ts",
+    "dev:client": "cd client && vite --port 3000",
+    "build:client": "cd client && tsc -p ./tsconfig.json && vite build",
+    "preview:client": "cd client && vite preview",
+    "dev:admin": "cd admin && vite --port 3001",
+    "build:admin": "cd admin && tsc -p ./tsconfig.json && vite build",
+    "preview:admin": "cd admin && vite preview",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write .",
-    "build": "rm -rf ./dist && yarn run api_build && yarn run client_build"
+    "build": "rm -rf ./dist/api && yarn run build:api && yarn run build:client && yarn run build:admin"
   },
   "dependencies": {
     "@types/cookie-parser": "^1.4.9",
