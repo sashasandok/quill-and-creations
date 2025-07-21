@@ -19,23 +19,23 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 const router = express.Router()
 routes(app, router)
 
-// --- Serve static client
+// Serve static client
 const clientPath = path.join(__dirname, '..', 'client')
 app.use(express.static(clientPath))
 
-// --- Serve static admin
+// Serve static admin
 const adminPath = path.join(__dirname, '..', 'admin')
 app.use('/admin', express.static(adminPath))
 
 console.log('Serving client from:', clientPath)
 console.log('Serving admin from:', adminPath)
 
-// --- Admin fallback (for React Router inside /admin)
+// Admin fallback (for React Router inside /admin)
 app.get('/admin/*', (req, res) => {
   res.sendFile(path.join(adminPath, 'index.html'))
 })
 
-// --- Client fallback (for React Router inside client)
+// Client fallback (for React Router inside client)
 app.get('*', (req, res) => {
   // Skip serving index.html for API or static file paths
   if (

@@ -7,8 +7,11 @@
     "strict": true,
     "skipLibCheck": true,
     // "jsx": "react-jsx",
-    "baseUrl": "api",
-    "outDir": "./dist/api"
+    "baseUrl": ".",
+    "outDir": "./dist/api",
+    "paths": {
+      "@ui/*": ["ui/*"] // this tells TS where to find the "@ui" alias
+    }
   },
   "include": ["api/**/*", "api/swagger.ts"],
   "exclude": ["dist/**/*"]
