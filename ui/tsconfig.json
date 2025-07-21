@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "outDir": "../dist/ui"
+    // "composite": true,
+    // "declaration": true
+  },
+  "include": ["src"]
+}

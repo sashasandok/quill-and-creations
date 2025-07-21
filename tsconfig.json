@@ -1,18 +1,23 @@
 {
   "compilerOptions": {
-    "target": "es2016",
-    "module": "nodenext",
+    "target": "ES2020",
+    "module": "ESNext",
+    "lib": ["DOM", "ESNext"],
+    "moduleResolution": "Node",
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
     "skipLibCheck": true,
-    // "jsx": "react-jsx",
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "strict": true,
     "baseUrl": ".",
-    "outDir": "./dist/api",
     "paths": {
-      "@ui/*": ["ui/*"] // this tells TS where to find the "@ui" alias
+      "@ui/*": ["ui/src/*"],
+      "@api/*": ["api/*"],
+      "@client/*": ["client/*"],
+      "@admin/*": ["admin/*"]
     }
   },
-  "include": ["api/**/*", "api/swagger.ts"],
+  "include": ["ui/**/*"],
   "exclude": ["dist/**/*"]
 }

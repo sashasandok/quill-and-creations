@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router'
-import { HomePage, DashboardPage } from '@/pages'
-import { AppHeader } from '@ui'
+import { HomePage, DashboardPage } from '@admin/src/pages'
+import { AppHeader } from '@ui/components'
 
 export const App = () => {
   return (

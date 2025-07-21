@@ -2,7 +2,7 @@
   "extends": "../tsconfig.json",
   "include": ["src"],
   "compilerOptions": {
-    "outDir": "../dist/admin",
-    "jsx": "react-jsx"
+    "outDir": "../dist/api",
+    "module": "CommonJS"
   }
 }
