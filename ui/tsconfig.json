@@ -1,10 +1,10 @@
 {
-  "extends": "../tsconfig.json",
+  "extends": "../tsconfig.base.json",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "outDir": "../dist/ui"
-    // "composite": true,
-    // "declaration": true
+    "outDir": "../dist/ui",
+    "composite": true,
+    "declaration": true
   },
-  "include": ["src"]
+  "include": ["src/**/*"]
 }

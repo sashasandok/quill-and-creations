@@ -18,6 +18,5 @@
       "@admin/*": ["admin/*"]
     }
   },
-  "include": ["ui/**/*"],
-  "exclude": ["dist/**/*"]
+  "exclude": ["dist/**/*", "node_modules/**/*"]
 }

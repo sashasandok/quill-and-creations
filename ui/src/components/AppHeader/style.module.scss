@@ -9,5 +9,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: $main-padding;
+  padding: 0 $main-padding;
+
+  &-app-logo {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid green;
+    }
+  }
 }

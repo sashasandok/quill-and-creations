@@ -4,17 +4,18 @@
   "private": true,
   "scripts": {
     "start": "node ./dist/api/bin/www.js",
-    "build:api": "tsc",
+    "build:api": "cd api && tsc -p ./tsconfig.json",
     "dev:api": "nodemon --exec ts-node ./api/bin/www.ts",
     "dev:client": "cd client && vite --port 3000",
     "build:client": "cd client && tsc -p ./tsconfig.json && vite build",
     "preview:client": "cd client && vite preview",
     "dev:admin": "cd admin && vite --port 3001",
-    "build:admin": "cd admin && tsc -p ../tsconfig.json && vite build",
+    "build:admin": "cd admin && tsc -p ./tsconfig.json && vite build",
     "preview:admin": "cd admin && vite preview",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write .",
-    "build": "rm -rf ./dist/api && yarn run build:api && yarn run build:client && yarn run build:admin"
+    "build:ui": "cd ui && tsc -p ./tsconfig.json",
+    "build": "rm -rf ./dist && yarn run build:api && yarn run build:client && yarn run build:admin && yarn run build:ui"
   },
   "dependencies": {
     "@ant-design/v5-patch-for-react-19": "^1.0.3",
@@ -47,7 +48,8 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
     "vite": "^7.0.4",
-    "vite-tsconfig-paths": "^5.1.4"
+    "vite-tsconfig-paths": "^5.1.4",
+    "zustand": "^5.0.6"
   },
   "devDependencies": {
     "@eslint/js": "^9.31.0",
