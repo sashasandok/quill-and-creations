@@ -1,5 +1,5 @@
-@use '../../ui/src/styles/reset.scss' as *;
-@use '../../ui/src/styles/colors.scss' as *;
+@use './styles/reset.scss' as *;
+@use './styles/colors.scss' as *;
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

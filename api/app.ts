@@ -1,6 +1,5 @@
 import express from 'express'
 import path from 'path'
-import helmet from 'helmet'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
 import swaggerUi from 'swagger-ui-express'
@@ -8,8 +7,6 @@ import { routes } from './routes'
 import { swaggerSpec } from './swagger'
 
 const app = express()
-
-app.use(helmet())
 
 app.use(logger(':method :url :status :res[content-length] - :response-time ms'))
 app.use(express.json())

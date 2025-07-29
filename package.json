@@ -9,15 +9,12 @@
     "dev:client": "cd client && vite --port 3000",
     "build:client": "cd client && tsc -p ./tsconfig.json && vite build",
     "preview:client": "cd client && vite preview",
-    "dev:admin": "cd admin && vite --port 3001",
-    "build:admin": "cd admin && tsc -p ./tsconfig.json && vite build",
-    "preview:admin": "cd admin && vite preview",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write .",
-    "build:ui": "cd ui && tsc -p ./tsconfig.json",
-    "build": "rm -rf ./dist && yarn run build:api && yarn run build:client && yarn run build:admin && yarn run build:ui"
+    "build": "rm -rf ./dist && yarn run build:api && yarn run build:client"
   },
   "dependencies": {
+    "@ant-design/icons": "5",
     "@ant-design/v5-patch-for-react-19": "^1.0.3",
     "@types/cookie-parser": "^1.4.9",
     "@types/express": "^5.0.3",
@@ -27,6 +24,8 @@
     "@types/swagger-ui-express": "^4.1.8",
     "@vitejs/plugin-react": "^4.6.0",
     "antd": "^5.26.6",
+    "antd-style": "^3.7.1",
+    "axios": "^1.11.0",
     "bcryptjs": "^3.0.2",
     "classnames": "^2.5.1",
     "cookie-parser": "~1.4.4",
